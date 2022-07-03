@@ -118,6 +118,8 @@ f
 
 (define (if p t f) (p t f))
 
+;; (define if (lambda (p t f) (p t f)))
+
 (define (and x y) (if x y false))
 (define (or x y) (if x true y))
 (define (not x) (if x false true))
@@ -132,10 +134,21 @@ f
 (not (not true)) => true
 ```
 
-编码对子（从而编码链表）：
+编码 pair （cons）（从而编码链表）：
+
+Temporarily save `car` and `cdr` to a lambda.
+
+Later, applying the lambda to a function,
+is applying this function it to the saved `car` and `cdr`
 
 ```
-TODO
+(define (cons car cdr) (lambda (f) (f car cdr)))
+
+(define (car pair) (pair (lambda (car cdr) car)))
+(define (cdr pair) (pair (lambda (car cdr) cdr)))
+
+(car (cons a d)) => a
+(cdr (cons a d)) => d
 ```
 
 编码自然数：

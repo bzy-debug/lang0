@@ -161,7 +161,21 @@ is applying this function it to the saved `car` and `cdr`
 
 ```
 (define (null f) true)
+(define null (lambda (f) true))
 (define (null? pair) (pair (lambda (car cdr) false)))
+
+(null? (cons a d)) => false
+
+((cons a d) (lambda (car cdr) false))
+((lambda (f) (f car cdr)) (lambda (car cdr) false))
+((lambda (car cdr) false) a d)
+false
+
+(null? null) => true
+
+(null? (lambda (f) true))
+((lambda (f) true) (lambda (car cdr) false))
+true
 ```
 
 ## Nat
@@ -169,7 +183,25 @@ is applying this function it to the saved `car` and `cdr`
 ```
 (define zero (lambda (base step) base))
 (define (add1 prev) (lambda (base step) (step (prev base step))))
+
 (define (iter-Nat n base step) (n base step))
+```
+
+```
+(iter-Nat zero base step) => base
+(iter-Nat (add1 prev) base step) => (step (iter-Nat prev base step))
+
+(iter-Nat n base step) =>
+(step (step (step ... (step base)))) ;; n times
+```
+
+```
+(iter-Nat zero base step) => base
+((lambda (base0 step0) base0) base step)
+base
+
+(iter-Nat (add1 prev) base step) => (step (iter-Nat prev base step))
+TODO
 ```
 
 # 结论

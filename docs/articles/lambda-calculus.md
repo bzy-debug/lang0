@@ -201,7 +201,13 @@ true
 base
 
 (iter-Nat (add1 prev) base step) => (step (iter-Nat prev base step))
-TODO
+((add1 prev) base step)
+((lambda (base step) (step (prev base step))) base step)
+(step (prev base step))
+(step (iter-Nat prev base step))
+
+(define (add a b) (iter-Nat a b add1))
+(define (mul a b) (iter-Nat a b (add b)))
 ```
 
 # 结论

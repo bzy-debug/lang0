@@ -1,4 +1,4 @@
-# Lang Design Practice
+# Lang0
 
 > Programming language design practice for cicada interns.
 

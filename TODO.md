@@ -8,12 +8,16 @@
 
 # expression and evaluation
 
+- intro to `evaluate`  setup tests
+
 - `Exp`
 - `Value`
 
 - `Var`
 - `Fn`
 - `Ap`
+
+- setup tests
 
 - `Mod`
 - `Stmt`

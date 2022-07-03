@@ -52,14 +52,16 @@ f
 ```
 
 ```
-((f a) b)
-(f a b)
+(((f a) b) c)
+(f a b c)
 ```
 
 解决「起源」中所提到的问题：
 
 ```
-TODO
+(lambda (x) (add (mul a (power x 2)) c))
+(lambda (a x) (add (mul a (power x 2)) c))
+(lambda (a x c) (add (mul a (power x 2)) c))
 ```
 
 # 计算
@@ -79,7 +81,7 @@ TODO
 
 ((lambda (t) (lambda (t) t)) (lambda (x) x))
 =>
-(lambda (t) (lambda (t) t))
+(lambda (t) t)
 
 ((lambda (t) (t (lambda (t) t))) (lambda (x) x))
 =>
@@ -111,8 +113,8 @@ TODO
 (define (true t f) t)
 (define (false t f) f)
 
-(define true (lambda (t f) t))
-(define false (lambda (t f) f))
+;; (define true (lambda (t f) t))
+;; (define false (lambda (t f) f))
 
 (define (if p t f) (p t f))
 

@@ -107,22 +107,24 @@ f
 (define (f x) ...)
 ```
 
-编码 boolean：
+## Boolean
 
 ```
 (define (true t f) t)
 (define (false t f) f)
 
-;; (define true (lambda (t f) t))
-;; (define false (lambda (t f) f))
-
 (define (if p t f) (p t f))
-
-;; (define if (lambda (p t f) (p t f)))
 
 (define (and x y) (if x y false))
 (define (or x y) (if x true y))
 (define (not x) (if x false true))
+```
+
+`true, false, if` 需要满足的接口（公理）：
+
+```
+(if true t f) => t
+(if false t f) => f
 ```
 
 可以验证：
@@ -134,7 +136,7 @@ f
 (not (not true)) => true
 ```
 
-编码 pair （cons）（从而编码链表）：
+## Cons
 
 Temporarily save `car` and `cdr` to a lambda.
 
@@ -146,15 +148,28 @@ is applying this function it to the saved `car` and `cdr`
 
 (define (car pair) (pair (lambda (car cdr) car)))
 (define (cdr pair) (pair (lambda (car cdr) cdr)))
+```
 
+`cons, car, cdr` 需要满足的接口（公理）：
+
+```
 (car (cons a d)) => a
 (cdr (cons a d)) => d
 ```
 
-编码自然数：
+不要忘了 `null` 和 `null?`：
 
 ```
-TODO
+(define (null f) true)
+(define (null? pair) (pair (lambda (car cdr) false)))
+```
+
+## Nat
+
+```
+(define zero (lambda (base step) base))
+(define (add1 prev) (lambda (base step) (step (prev base step))))
+(define (iter-Nat n base step) (n base step))
 ```
 
 # 结论

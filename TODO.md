@@ -1,12 +1,12 @@
-# expression and evaluation
+- support define
+- syntax for `(define)`
 
-- `Value`
-- `Env`
+# expression and evaluation
 
 - `Mod`
 - `Stmt`
 
-# implement concrete syntax
+# command line interface
 
 - command line interface for testing
 

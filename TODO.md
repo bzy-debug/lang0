@@ -1,6 +1,7 @@
 # expression and evaluation
 
-- `Var` -- `evaluate`
+- `Var` -- `evaluate` -- test
+
 - `Ap` -- `evaluate`
 - `Fn` -- `evaluate`
 

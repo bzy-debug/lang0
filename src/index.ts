@@ -21,7 +21,7 @@ export class Env {
 //       | (lambda (<var>) <exp>) // Fn
 
 export abstract class Value {
-  // TODO
+  abstract apply(arg: Value): Value
 }
 
 export abstract class Exp {
@@ -51,11 +51,7 @@ export class Ap extends Exp {
   evaluate(env: Env): Value {
     const target = this.target.evaluate(env)
     const arg = this.arg.evaluate(env)
-
-    // target.apply(arg)
-    // TODO
-
-    throw new Error("TODO")
+    return target.apply(arg)
   }
 }
 
@@ -72,5 +68,10 @@ export class Fn extends Exp {
 export class FnValue extends Value {
   constructor(public name: string, public body: Exp, public env: Env) {
     super()
+  }
+
+  apply(arg: Value): Value {
+    const newEnv = this.env.extend(this.name, arg)
+    return this.body.evaluate(newEnv)
   }
 }

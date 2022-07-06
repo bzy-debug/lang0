@@ -1,7 +1,5 @@
 # expression and evaluation
 
-- `Ap` -- `evaluate`
-
 - `Value`
 - `Env`
 

@@ -13,6 +13,15 @@ An implementation of [(Untyped) Lambda Calculus](https://en.wikipedia.org/wiki/L
 - Two simple testing statements `(assert-equal)` and `(assert-not-equal)`.
   - They can handle beta and eta equivalence.
 
+## Development
+
+```
+npm install    // Install dependencies
+npm run build  // Compile `src/` to `lib/`
+npm run watch  // Watch the compilation
+npm run test   // Run test
+```
+
 ## Contributions
 
 > Be polite, do not bring negative emotion to others.

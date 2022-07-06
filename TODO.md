@@ -1,11 +1,3 @@
-# design
-
-- concrete syntax and tests
-
-# project setup
-
-- setup a typescript project
-
 # expression and evaluation
 
 - intro to `evaluate`  setup tests

@@ -1,6 +1,9 @@
 # expression and evaluation
 
-- intro to `evaluate`  setup tests
+
+- `Exp`
+
+- setup tests
 
 - `Exp`
 - `Value`

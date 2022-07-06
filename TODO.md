@@ -1,7 +1,6 @@
 # expression and evaluation
 
 - `Ap` -- `evaluate`
-- `Fn` -- `evaluate`
 
 - `Value`
 - `Env`

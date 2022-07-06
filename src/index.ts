@@ -20,9 +20,8 @@ export class Env {
 //       | (<exp> <exp>) // Ap
 //       | (lambda (<var>) <exp>) // Fn
 
-export class Value {
+export abstract class Value {
   // TODO
-  // apply(arg: Value): Value
 }
 
 export abstract class Exp {
@@ -66,6 +65,12 @@ export class Fn extends Exp {
   }
 
   evaluate(env: Env): Value {
-    throw new Error("TODO")
+    return new FnValue(this.name, this.body, env)
+  }
+}
+
+export class FnValue extends Value {
+  constructor(public name: string, public body: Exp, public env: Env) {
+    super()
   }
 }

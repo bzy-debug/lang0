@@ -1,18 +1,11 @@
 # expression and evaluation
 
+- `Var` -- `evaluate`
+- `Ap` -- `evaluate`
+- `Fn` -- `evaluate`
 
-- `Exp`
-
-- setup tests
-
-- `Exp`
 - `Value`
-
-- `Var`
-- `Fn`
-- `Ap`
-
-- setup tests
+- `Env`
 
 - `Mod`
 - `Stmt`

@@ -1,4 +1,4 @@
-class Env {
+export class Env {
   constructor(public values: Map<string, Value> = new Map()) {}
 
   extend(name: string, value: Value): Env {
@@ -20,16 +20,16 @@ class Env {
 //       | (<exp> <exp>) // Ap
 //       | (lambda (<var>) <exp>) // Fn
 
-abstract class Value {
+export class Value {
   // TODO
   // apply(arg: Value): Value
 }
 
-abstract class Exp {
+export abstract class Exp {
   abstract evaluate(env: Env): Value
 }
 
-class Var extends Exp {
+export class Var extends Exp {
   constructor(public name: string) {
     super()
   }
@@ -44,7 +44,7 @@ class Var extends Exp {
   }
 }
 
-class Ap extends Exp {
+export class Ap extends Exp {
   constructor(public target: Exp, public arg: Exp) {
     super()
   }
@@ -60,7 +60,7 @@ class Ap extends Exp {
   }
 }
 
-class Fn extends Exp {
+export class Fn extends Exp {
   constructor(public name: string, public body: Exp) {
     super()
   }

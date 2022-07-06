@@ -197,7 +197,7 @@ true
 
 ```
 (iter-Nat zero base step) => base
-((lambda (base0 step0) base0) base step)
+((lambda (base step) base) base step)
 base
 
 (iter-Nat (add1 prev) base step) => (step (iter-Nat prev base step))

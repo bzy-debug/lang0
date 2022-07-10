@@ -1,5 +1,5 @@
-import { Parser } from "../parser"
 import { Env } from "../env"
+import { Parser } from "../parser"
 
 const parser = new Parser()
 
@@ -49,7 +49,9 @@ const parser = new Parser()
   // (lambda (t) t)
 
   const env = new Env()
-  const exp = parser.parseExp("((lambda (t) (t (lambda (t) t))) (lambda (x) x))")
+  const exp = parser.parseExp(
+    "((lambda (t) (t (lambda (t) t))) (lambda (x) x))"
+  )
   const value = exp.evaluate(env)
 
   console.dir(value, { depth: null })

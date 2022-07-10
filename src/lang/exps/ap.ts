@@ -12,4 +12,8 @@ export class Ap extends Exp {
     const arg = this.arg.evaluate(env)
     return target.apply(arg)
   }
+
+  format(): string {
+    return `(${this.target.format()} ${this.arg.format()})`
+  }
 }

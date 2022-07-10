@@ -1,11 +1,3 @@
-- support define
-- syntax for `(define)`
-
-# expression and evaluation
-
-- `Mod`
-- `Stmt`
-
 # command line interface
 
 - command line interface for testing

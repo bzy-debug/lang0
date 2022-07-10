@@ -1,5 +1,5 @@
 import { Env } from "../env"
-import { Var, Ap, Fn } from "../exps"
+import { Ap, Fn, Var } from "../exps"
 
 {
   // ((lambda (t) (lambda (f) t)) (lambda (x) x))

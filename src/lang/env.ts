@@ -16,4 +16,13 @@ export class Env {
   findValue(name: string): Value | undefined {
     return this.values.get(name)
   }
+
+  format(): string {
+    let s = ""
+    for (const [name, value] of this.values) {
+      s += `* ${name} => ${value.formatWithoutEnv()}\n`
+    }
+
+    return s
+  }
 }

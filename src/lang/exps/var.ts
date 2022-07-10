@@ -15,4 +15,8 @@ export class Var extends Exp {
 
     return value
   }
+
+  format(): string {
+    return this.name
+  }
 }

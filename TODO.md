@@ -1,3 +1,11 @@
+# lazy evaluation
+
+- lazy ?
+
+# normalization by evaluation
+
+- `readback`
+
 # command line interface
 
 - command line interface for testing
@@ -6,5 +14,3 @@
 
 - import from file
 - import from url
-
-# normalization by evaluation

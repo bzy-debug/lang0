@@ -1,10 +1,13 @@
-# lazy evaluation
-
-- lazy ?
-
 # normalization by evaluation
 
 - `readback`
+
+- `(assert-equal)`
+- `(assert-not-equal)`
+
+# lazy evaluation
+
+- lazy ?
 
 # command line interface
 
